@@ -32,8 +32,17 @@ And the architecture of these systems keeps evolving. New primitives (hooks, ski
 - **Precedence hierarchy** -- when directives conflict, this tells Claude which one wins.
 - **A worked example** -- one real AI-augmented system mapped onto KCA, so you see how the framework applies before you apply it yourself.
 - **ADAPTING.md** -- how to create your own Atlas for your specific system.
+- **`/qq-arch-add` and `/qq-arch-load` slash commands** -- included in `commands/`. `qq-arch-add` runs the 3 placement tests interactively and registers a new component. `qq-arch-load` routes natural-language questions to the right Atlas section without loading the whole document.
 
-**Add it to Claude Code:** Point `~/.claude/rules/atlas.md` at `atlas-framework.md`. Claude knows the model every session. No setup required -- just a reference.
+**Add it to Claude Code:**
+
+```
+git clone https://github.com/lee-fuhr/atlas ~/atlas
+cp ~/atlas/commands/qq-arch-add.md ~/.claude/commands/
+cp ~/atlas/commands/qq-arch-load.md ~/.claude/commands/
+```
+
+Then create `~/.claude/rules/atlas.md` pointing at `~/atlas/atlas-framework.md`. Claude knows the model every session. Run `/qq-arch-add` when a new component needs placing. Run `/qq-arch-load [question]` to pull the right section without loading everything.
 
 ---
 
