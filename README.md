@@ -12,6 +12,8 @@ The problem isn't complexity -- it's that you don't have a shared model. Without
 
 The drift is subtle at first. You find three versions of the same instruction in different places. A hook that should be a rules file. Knowledge that fires automatically when it should sit quietly. Six months in, the system is working against you.
 
+And the architecture of these systems keeps evolving. New primitives (hooks, skills, MCP servers, background agents) appear constantly. Without a stable model for how they relate, every new capability is another decision made in a vacuum.
+
 ## What changes
 
 **Every component has an obvious home.** The KCA model gives three layers (Knowledge, Capability, Activity) and six sub-layers. The 3 placement tests give unambiguous answers. You stop debating and start placing.
@@ -19,6 +21,8 @@ The drift is subtle at first. You find three versions of the same instruction in
 **Claude makes consistent decisions.** When Claude knows the model, it places new components the same way every session. The 3 tests become a decision procedure that generalizes -- even to components that didn't exist when you first built your system.
 
 **You see how your system improves itself.** The 6 feedback arrows describe how information flows between layers: how principles constrain behavior, how experience drives adaptation, how activity captures knowledge. You stop wondering why things work (or don't).
+
+**The framework stays current as the field evolves.** New primitives get placed using the same 3 tests. When the community discovers a new architecture pattern, the KCA model tells you where it fits without requiring a rethink from scratch.
 
 ## What's in it
 
@@ -32,6 +36,12 @@ The drift is subtle at first. You find three versions of the same instruction in
 **Add it to Claude Code:** Point `~/.claude/rules/atlas.md` at `atlas-framework.md`. Claude knows the model every session. No setup required -- just a reference.
 
 ---
+
+## Contributing
+
+AI-augmented systems are still being figured out. New primitives appear, new patterns emerge from production use, new failure modes get discovered. The Atlas framework stays useful by evolving with the field -- but it needs input from people running real systems.
+
+If you've hit a placement decision the 3 tests don't resolve cleanly, found a feedback loop the 6 arrows don't capture, or discovered an architectural pattern that doesn't fit the current model -- open an issue. That's how the framework gets better.
 
 ## Part of the stack
 
