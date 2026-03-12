@@ -1193,7 +1193,7 @@ Location 2 — External/installed skills (`~/CC/.agents/skills/`, 21 skills):
 | Development | `vercel-react-best-practices`, `web-design-guidelines`, `build-production-grade` | vercel-labs |
 | Tooling | `gemini`, `agent-md-refactor`, `qa-test-planner`, `verification-before-completion` | softaworks/agent-toolkit, obra/superpowers |
 | Voice | `personal-voice` | Local — mandatory for all communication drafted as Lee |
-| Other | `agent-browser`, `browser-automation`, `github-standards`, `writing-guidelines`, `pdf-guide-generator`, `chatgpt-share-link-creator`, `cover-variant-generator`, `promptbase-automation` | Various |
+| Other | `agent-browser`, `browser-automation`, `github-standards`, `writing-guidelines`, `pdf-guide-generator`, `chatgpt-share-link-creator`, `cover-variant-generator`, `promptbase-automation`, `overnight-runner`, `crm-lead-intake`, `review-learnings` | Various |
 
 Location 3 — Local system skills (`_ System/skills/`, 2 skills):
 
