@@ -435,7 +435,7 @@ The governing rule is: **broader scope wins over narrower scope; explicit wins o
 - **Resolution:** Human command (level 1) > Principles (level 2). Write the function directly. This is correct behavior — the Bible serves Lee, not the reverse. Lee's override here does not change the principle; it exercises the human's absolute right to override any level below.
 
 **Example 4 — Two rules files contradict each other:**
-- `~/.claude/rules/Build Bible.md` (global): "No files > 500 lines"
+- `~/.claude/rules/build-bible.md` (global): "No files > 500 lines"
 - A project-level `.claude/rules/` file: "This generated file is expected to be 1,200 lines — do not split it"
 - **Resolution:** Both are level 5 (Protocols). Apply scope rule: more specific scope wins. The project-level rule overrides the global rule for that specific file. The global 500-line rule still applies to all other files in the project.
 
@@ -1543,9 +1543,9 @@ The matrix also reveals enforcement gaps: principles 1.6 (config-driven) and 1.1
 **Authority required:** Implicit. Principles don't actively enforce; they define the frame. Enforcement happens at the Protocols level (hooks, rules files) which are derived from Principles. The authority is structural, not operational.
 
 **Concrete examples:**
-1. Bible rule 1 ("Orchestrate, don't execute") → CLAUDE.md "Primary directive" section → `~/.claude/rules/Build Bible.md` critical rule 1 → `delegation-check.py` hook → every session starts with Conductor mindset and is actively monitored for solo execution
+1. Bible rule 1 ("Orchestrate, don't execute") → CLAUDE.md "Primary directive" section → `~/.claude/rules/build-bible.md` critical rule 1 → `delegation-check.py` hook → every session starts with Conductor mindset and is actively monitored for solo execution
 2. Bible verification requirement (principle 1.2 + 1.14) → `verification-protocols.md` reference doc → `~/.claude/rules/steelman.md` auto-loaded rule → every plan receives adversarial review
-3. Bible 14-rule set → `~/.claude/rules/Build Bible.md` → auto-loaded every session as a compressed reference → sessions can consult the full Bible for depth but always have the summary active
+3. Bible 14-rule set → `~/.claude/rules/build-bible.md` → auto-loaded every session as a compressed reference → sessions can consult the full Bible for depth but always have the summary active
 4. Architectural decision (SQLite for all databases, 6 stores) → constrains all agent database designs → constrains `db-backup.sh` backup strategy → constrains dashboard data access patterns
 
 **Failure mode: Drift.** The most dangerous silent failure in the system. Bible changes but derived copies don't update. Sessions running CLAUDE.md see one behavior; sessions consulting Bible directly see another. The system behaves inconsistently across sessions. Because the 4-tier CLAUDE.md hierarchy has ~1,185 lines across multiple files, drift can accumulate undetected. The Bible's own section 9 documents "CLAUDE.md hierarchy broken (8 major duplications, 6 contradictions)" as a CRITICAL debt item — evidence that drift is not theoretical but active.
@@ -2088,7 +2088,7 @@ Documents that define WHAT RUNS -- configuration, agent definitions, database sc
 | Name | File path | Scope | Status | Size |
 |------|-----------|-------|--------|------|
 | Global CLAUDE.md | `~/.claude/CLAUDE.md` | All projects -- conductor mindset, planning mandate, questioning/verification/steelman protocols, response format, security audit | Active | ~181 lines |
-| Project CLAUDE.md (CC) | `~/CC/.claude/rules/Build Bible.md` | CC project scope -- Build Bible summary (auto-loaded) | Stable | ~50 lines |
+| Project CLAUDE.md (CC) | `~/CC/.claude/rules/build-bible.md` | CC project scope -- Build Bible summary (auto-loaded) | Stable | ~50 lines |
 | LFI CLAUDE.md | `~/CC/Work/LFI/CLAUDE.md` | LFI project -- agent sequencing, routing table, integration quick-reference, skills, EA rituals, session maintenance, file organization | Active | ~289 lines |
 | Operations CLAUDE.md | `~/CC/Work/LFI/_ Operations/CLAUDE.md` | Operations scope -- integration API docs, script inventory, folder structure, background services, EA Brain, session index, outreach system | Active | ~642 lines |
 | Autonomous CLAUDE.md | `~/CC/Work/LFI/_ Operations/autonomous/CLAUDE.md` | Autonomous operations scope | Stable | ~31 lines |
@@ -2303,7 +2303,7 @@ Documents that span multiple layers or govern the system as a whole.
 
 Key relationships between documents that are not obvious from the layer tables alone.
 
-**Bible -> CLAUDE.md (derived copy obligation):** The Bible is canonical for principles and patterns. CLAUDE.md at all tiers contains derived summaries of Bible content. When the Bible changes, affected CLAUDE.md files must update. See Bible section 3.6 (enforcement traceability matrix) to trace which CLAUDE.md sections derive from which Bible rules. The `~/.claude/rules/Build Bible.md` file is explicitly a Bible summary and must stay synchronized.
+**Bible -> CLAUDE.md (derived copy obligation):** The Bible is canonical for principles and patterns. CLAUDE.md at all tiers contains derived summaries of Bible content. When the Bible changes, affected CLAUDE.md files must update. See Bible section 3.6 (enforcement traceability matrix) to trace which CLAUDE.md sections derive from which Bible rules. The `~/.claude/rules/build-bible.md` file is explicitly a Bible summary and must stay synchronized.
 
 **Atlas -> Bible and Directory:** The Atlas references both but duplicates neither. For HOW WE BUILD (principles, patterns, playbook), see the Bible. For WHAT EXISTS (detailed component specs with rationale), see the Directory (`directory.md`). The Atlas provides the architectural context -- WHERE things live, WHY they are there, HOW they connect.
 
