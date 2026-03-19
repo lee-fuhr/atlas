@@ -975,7 +975,7 @@ This is a large and heterogeneous collection spanning operations, intelligence, 
 
 **Routing tables:** Define which agents handle which task types. Located in Bible section 5.2 (agent routing table) and section 5.4 (agent sequencing dependency table). The routing logic is the primary mechanism by which the Conductor delegates to specialists. Key constraint: agent sequencing dependencies are non-negotiable — Voice Analyst before Emma Stratton, Content Strategist before UX Architect, UX Architect before Visual Designer.
 
-**Templates:** Task notes templates at `/Users/lee/CC/Work/LFI/_templates/task-notes/` (context.md, decisions.md, open-questions.md). When complex tasks warrant notes files, clone from templates. Agent templates at `_ System/agents/_templates/` include copywriting formulas, messaging frameworks, PM specs, design specs, UX specs, content specs, research templates, development patterns (7 stack-specific files), and code review template.
+**Templates:** Task notes templates at `~/Work/LFI/_templates/task-notes/` (context.md, decisions.md, open-questions.md). When complex tasks warrant notes files, clone from templates. Agent templates at `_ System/agents/_templates/` include copywriting formulas, messaging frameworks, PM specs, design specs, UX specs, content specs, research templates, development patterns (7 stack-specific files), and code review template.
 
 **Statusline configuration:** Current statusline config at `~/.claude/statusline-dark.sh`. Governs the visual display in the terminal — context usage percentage (color-coded), model name, working directory, session ID, and current topic (from `~/.claude/session-topics/{session_id}.txt`).
 
@@ -1096,7 +1096,7 @@ Rules files and protocols that govern standing behavior across all sessions. The
 
 **Voice enforcement:**
 - File: `~/.claude/rules/voice.md`
-- Reference: `/Users/lee/CC/Work/LFI/_ System/reference/lees-voice.md`
+- Reference: `~/Work/LFI/_ System/reference/lees-voice.md`
 - What it governs: all communication drafted as Lee must load `personal-voice` skill FIRST — no exceptions, no post-hoc checking
 - Key constraint: skill loading happens before drafting, not after. The skill shapes the writing from the first word.
 
@@ -1943,7 +1943,7 @@ The system monitors its own health through several mechanisms, each operating at
 All visual dashboards use static HTML rebuilt on data change — no server-side state, no APIs, no framework (Bible pattern reference: static HTML dashboard approach). The memory API server is the exception: a live Bun process serving the memory-ts system.
 
 **Backup verification:**
-- Daily at 2am: `cc-backup.sh` backs up full `/Users/lee/CC/` directory + `~/.claude/` config + LaunchAgent plists → Google Drive
+- Daily at 2am: `cc-backup.sh` backs up full `~/` directory + `~/.claude/` config + LaunchAgent plists → Google Drive
 - Daily at 3am: `db-backup.sh` backs up all SQLite databases via `sqlite3 .backup` (corruption-safe) → Google Drive `_databases/` subfolder with 7-day rotation
 - Failure → Pushover alert to Lee's devices
 - Verification: check `~/Library/Logs/lfi/db-backup.log` for last run status
