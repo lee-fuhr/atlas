@@ -1,6 +1,6 @@
 # Atlas
 
-You've got 40 components in your Claude Code system. You can't tell where new ones go.
+As your Claude Code system grows, every new component becomes a placement decision. This is a structural model that answers "where does this go?" — built from the same patterns that keep showing up in the repos and systems that hold together at scale.
 
 ---
 
@@ -54,11 +54,12 @@ If you've hit a placement decision the 3 tests don't resolve cleanly, found a fe
 
 ## Part of the stack
 
-| Repo | Role |
-|------|------|
-| [Build Bible](https://github.com/lee-fuhr/build-bible) | Methodology -- how to build with agents |
-| [Memeta](https://github.com/lee-fuhr/memeta) | Memory -- what Claude remembers across sessions |
-| [ai-ops-starter](https://github.com/lee-fuhr/ai-ops-starter) | Scaffolding -- the folder structure and templates |
+| Repo | What it does |
+|------|-------------|
+| **[Build Bible](https://github.com/lee-fuhr/build-bible)** | The engineering methodology — principles, patterns, and failure modes from across the field, synthesized into one living reference. |
+| **[Atlas](https://github.com/lee-fuhr/atlas)** | The architectural model — a structural framework for where every component lives, built from the patterns that hold together at scale. |
+| **[Memeta](https://github.com/lee-fuhr/memeta)** | The memory system — every technique that works for giving AI agents persistent memory, unified and coexisting additively. |
+| **[Scaffold](https://github.com/lee-fuhr/scaffold)** | The starter kit — folder structure, hooks, skills, and templates that production systems converge on, ready to clone. |
 
 ---
 
