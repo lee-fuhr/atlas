@@ -1,4 +1,4 @@
-<!-- Atlas v1.0.0 | Last updated: 2026-03-05 | Written for Claude Code sessions -->
+<!-- Atlas v1.0.1 | Last updated: 2026-03-24 | Written for Claude Code sessions -->
 <!-- Load by section. Never load the full document. Use /qq-arch-load for section routing. -->
 
 # Atlas — system architecture
@@ -612,6 +612,8 @@ The process by which the Bible itself updates. Lives in Bible section 8. The Bib
 7. Documentation — update the Bible with rule, evidence, and rationale
 
 **Entry gate:** `/qq-bible-add [source]` — ingests external sources, classifies against existing Bible, proposes additions with steelman review. This is the Codification arrow made executable.
+
+**External influences ingested:** The Bible and Memeta have both absorbed design patterns from external projects through this entry gate. Notable influences include [CQ (Conversational Quality)](https://github.com/nicholasgasior/cq) by Mozilla AI, whose structured knowledge management patterns (lifecycle classification, confirmation counting, superseded-by chains) informed additions to both the Bible's longevity check (section 8) and Memeta's roadmap. External sources are evaluated against existing principles — what survives steelman review gets integrated; what doesn't gets documented in Memeta's graveyard.
 
 **Deletion criteria** (Bible section 8.3): not referenced in 6 months, contradicted by evidence, superseded by better pattern, or failed trial period.
 
@@ -2363,6 +2365,14 @@ The protocol has two modes, calibrated to the magnitude of the change. Structura
 5. **Verify Directory:** Does `directory.md` also need updating? If the component is new, it should appear in the Directory first.
 6. **Version bump:** PATCH.
 7. **No steelman needed** for grooming passes.
+
+### External influences
+
+System design ideas absorbed from external projects. These inform evolution decisions without being adopted wholesale.
+
+| Source | What we learned | Date absorbed | Reference |
+|--------|----------------|---------------|-----------|
+| CQ (Mozilla AI) | Lifecycle classification (permanent/workaround/gap-signal), type-aware quality gates for knowledge ingestion, longevity checks before storing, session reflection as a mining workflow, confirmation counting, homogenization risk as a named threat | 2026-03-24 | `docs/cq-design-learnings.md` in memeta repo; `cq-mozilla-full-inventory.md` in local infrastructure |
 
 **Authority:** Claude can execute grooming passes autonomously for count corrections, path corrections, and line count refreshes. New component registration: Claude executes without approval for Machinery components (agents, skills, commands, hooks, LaunchAgents, database entries). Lee confirmation required for Protocols components (new rules files, new protocol documents, new skills that change behavioral expectations) because these carry higher risk of unintended behavioral changes.
 
